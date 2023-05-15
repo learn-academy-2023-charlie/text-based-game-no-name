@@ -1,30 +1,39 @@
+def render_gallows
+    File.readlines('hangman.txt').each do |line|
+      puts line
+    end
+  end
+render_gallows
+
+
 # Text-based Game Challenge
-# puts 'Please Enter Your Name'
-# user_name = gets.chomp.capitalize
-# p "#{user_name}, welcome to Wheel of Fortune"
+puts 'Please Enter Your Name'
+user_name = gets.chomp.capitalize
+p "#{user_name}, welcome to hangman! you have 5 attempts to guess the random word correctly in hopes to save the man from being hung!"
 
-# def word_guess (string)
-# .sample will be used to build the word list (array) for the game.
-word = ['teacher', 'book', 'dog', 'if']
+word = ['teacher', 'school', 'bus', 'pencil', 'notebook', 'pen', 'eraser']
 word_guess = word.sample
-x = 'e'
+attempts = 5
 letters = ['_ '] * word_guess.size
-guessed_letters = []
-# puts "Pick a Letter"
+p letters.join
+while letters.include?('_ ') && attempts > 0
+puts "Pick a Letter"
 guess = gets.chomp.downcase
+p "you guessed #{guess}"
 
-# for w in word.split('') do 
-#     # p w
-#     if x == w
-#         p "We have a match #{x}"
-#         letters.replace(letters[])
-#     else
-#         p "wrong letter"
-#     end
-#    guessed_letters.push x 
-# # p word.size // output is 7 for "teacher"
-
- p letters.join
-# end
-# end
+    if word_guess.include?(guess) 
+    word_guess.chars.each_with_index do |x, index|
+        if x == guess 
+        p letters [index] = x 
+        end
+    end
+    else  
+        puts "#{guess} is the wrong letter"
+        attempts -= 1
+        p "you have #{attempts} attempts left"
+    end 
+    p letters.join 
+end
+p "the word was #{word_guess}"
+  
 
