@@ -46,3 +46,13 @@ Think about the difference between `p` and `puts`. Using `p` in development is h
 Keep your code simple. You have all the tools you need to effectively construct the game. This is an exercise in organization, planning, and creativity.
 
 Have fun! This medium is prime for easter eggs and (class appropriate) inside jokes.
+
+Team No Name Text Based Game Notes
+=========================================   
+
+Wheel of fortune type game
+
+Players get a sentence and guess the word or phrase that matches that sentence
+
+store the guesses, store the word, show the guessed letters, show the leftover letters
+
